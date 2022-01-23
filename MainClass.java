@@ -1,40 +1,31 @@
-interface Cycle{
-	void code();
-	void factories();
+class Aouter{
+	Aouter(){
+		System.out.println("Aouter class constructor is running.");
+	}
+	class Ainner{
+		Ainner( int a,int b){
+			System.out.println("The value of a is " +a);
+			System.out.println("Ainner class constructor is running.");
+		}
+	}
+};
 
-}
-class Unicycle implements Cycle{
-	public void code(){
-		factories();
+class Bouter extends Aouter{
+	Bouter(){
+		System.out.println("Bouter class constructor is running.");
 	}
-	public void factories(){
-		System.out.println("Code of Unicycle is U_cyc.");
+	class Binner{
+		 Binner(int a){
+			System.out.println("The value of a is " +a);
+			System.out.println("Binner class constructor is running.");
+		}
 	}
+};
 
-};
-class Bicycle implements Cycle{
-	public void code(){
-		factories();
-	}
-	public void factories(){
-		System.out.println("Code of Bicycle is B_cyc.");
-	}
-};
-class Tricycle implements Cycle{
-	public void code(){
-		factories();
-	}
-	public void factories(){
-		System.out.println("Code of tricycle is T_cyc.");
-	}
-};
-class MainClass {
+public class MainClass{
 	public static void main(String[] args){
-		Unicycle obj = new Unicycle();
-		obj.code();
-		Bicycle obj1 = new Bicycle();
-		obj1.code();
-		Tricycle obj2 = new Tricycle();
-		obj2.code();
-	}
+		Bouter.Binner in = new Bouter().new Binner(4);
+		
+	} 
+
 }
