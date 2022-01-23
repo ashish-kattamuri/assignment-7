@@ -1,55 +1,27 @@
-abstract class Rodent{
-	Rodent(){
-		System.out.println("Constructor of Rodent is running.");
-		}
-	public abstract void game();
-	public abstract void disp();
-			
-} ;
-class Mouse extends Rodent{
-	Mouse(){
-		System.out.println("Constructor of Mouse is running.");
-	}
-		public void game(){
-		System.out.println("Mouse is playing cricket.");
-		}
-		public void disp(){
-			System.out.println("I am Mouse... ");
-		}
+abstract class Cycle{
+	public abstract void balance();
 };
-class Gerbil extends Rodent{
-	Gerbil(){
-		System.out.println("Constructor of Gerbil is running");
-	}
-	public void game(){
-		System.out.println("Gerbil is playing Badminton");
-	}
-	public void disp(){
-		System.out.println("I am Gerbil... ");
+class Unicycle extends Cycle{
+	public void balance(){
+		System.out.println("The cost of Unicycle start with RS 2500. ");
 	}
 };
-class Hamster extends Rodent{
-	Hamster(){
-		System.out.println("Constructor of Hamster is running");
-	}
-	public void game(){
-		System.out.println("Hamster is playing Badminton");
-	}
-	public void disp(){
-		System.out.println("I am Hamster... ");
+class Bicycle extends Cycle{
+	public void balance(){
+		System.out.println("The cost of Bicycle start with Rs 3000. ");
 	}
 };
-public class MainClass {
+class Tricycle extends Cycle{
+//getting error in this code as Tricycle class inherite class Cycle but balance() is not declare by this class
+};
+public class MainClass{
 	public static void main(String[] args) {
-		Rodent[] rodent = new Rodent[3];
-		rodent[0] = new Mouse();
-		rodent[0].disp();
-		rodent[0].game();
-		rodent[1] = new Gerbil();
-		rodent[1].disp();
-		rodent[1].game();
-		rodent[2] = new Hamster();
-		rodent[2].disp();
-		rodent[2].game();
-		}
+		Cycle[] obj = new Cycle[3];
+		obj[0] = new Unicycle();
+		obj[0].balance();	
+		obj[1] = new Bicycle();
+		obj[1].balance();	
+		obj[2] = new Tricycle();
+		obj[2].balance();
+	}
 }
